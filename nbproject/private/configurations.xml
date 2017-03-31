@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="97">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df root="." name="0">
+      <df name="src">
+        <in>audio_aac.c</in>
+        <in>audio_ac3.c</in>
+        <in>audio_amr.c</in>
+        <in>audio_atrac3.c</in>
+        <in>audio_g726.c</in>
+        <in>audio_lpcm.c</in>
+        <in>audio_mp2.c</in>
+        <in>audio_mp3.c</in>
+        <in>audio_wma.c</in>
+        <in>av_mpeg1.c</in>
+        <in>av_mpeg2.c</in>
+        <in>av_mpeg4_part10.c</in>
+        <in>av_mpeg4_part2.c</in>
+        <in>av_wmv9.c</in>
+        <in>containers.c</in>
+        <in>containers.h</in>
+        <in>dlna.h</in>
+        <in>dlna_internals.h</in>
+        <in>image_jpeg.c</in>
+        <in>image_png.c</in>
+        <in>profiles.c</in>
+        <in>profiles.h</in>
+        <in>upnp_dms.c</in>
+      </df>
+      <in>test-libdlna.c</in>
+    </df>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <developmentServer>localhost</developmentServer>
+        <platform>2</platform>
+      </toolsSet>
+      <compile>
+        <compiledirpicklist>
+          <compiledirpicklistitem>.</compiledirpicklistitem>
+          <compiledirpicklistitem>${AUTO_FOLDER}</compiledirpicklistitem>
+        </compiledirpicklist>
+        <compiledir>${AUTO_FOLDER}</compiledir>
+        <compilecommandpicklist>
+          <compilecommandpicklistitem>${MAKE} ${ITEM_NAME}.o</compilecommandpicklistitem>
+          <compilecommandpicklistitem>${AUTO_COMPILE}</compilecommandpicklistitem>
+        </compilecommandpicklist>
+        <compilecommand>${AUTO_COMPILE}</compilecommand>
+      </compile>
+      <dbx_gdbdebugger version="1">
+        <gdb_pathmaps>
+        </gdb_pathmaps>
+        <gdb_interceptlist>
+          <gdbinterceptoptions gdb_all="false" gdb_unhandled="true" gdb_unexpected="true"/>
+        </gdb_interceptlist>
+        <gdb_signals>
+        </gdb_signals>
+        <gdb_options>
+          <DebugOptions>
+          </DebugOptions>
+        </gdb_options>
+        <gdb_buildfirst gdb_buildfirst_overriden="false" gdb_buildfirst_old="false"/>
+      </dbx_gdbdebugger>
+      <nativedebugger version="1">
+        <engine>gdb</engine>
+      </nativedebugger>
+      <runprofile version="9">
+        <runcommandpicklist>
+          <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" /home/gabriele/Video/austr.mp4 </runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" /home/gabriele/Video/austr.mp4</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" /home/gabriele/Video/sony_eye_candy.mpg</runcommandpicklistitem>
+        </runcommandpicklist>
+        <runcommand>"${OUTPUT_PATH}" /home/gabriele/Video/sony_eye_candy.mpg</runcommand>
+        <rundir>.</rundir>
+        <buildfirst>false</buildfirst>
+        <terminal-type>0</terminal-type>
+        <remove-instrumentation>0</remove-instrumentation>
+        <environment>
+        </environment>
+      </runprofile>
+    </conf>
+  </confs>
+</configurationDescriptor>
