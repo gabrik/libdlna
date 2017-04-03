@@ -22,6 +22,7 @@
 #include <stdlib.h>
 #include <string.h>
 
+
 #include "dlna_internals.h"
 #include "profiles.h"
 #include "containers.h"
@@ -40,6 +41,15 @@ extern dlna_registered_profile_t dlna_profile_av_mpeg2;
 extern dlna_registered_profile_t dlna_profile_av_mpeg4_part2;
 extern dlna_registered_profile_t dlna_profile_av_mpeg4_part10;
 extern dlna_registered_profile_t dlna_profile_av_wmv9;
+
+
+
+bool startsWith(const char *pre, const char *str)
+{
+    size_t lenpre = strlen(pre),
+           lenstr = strlen(str);
+    return lenstr < lenpre ? false : strncmp(pre, str, lenpre) == 0;
+}
 
 static void
 dlna_register_profile (dlna_t *dlna, dlna_registered_profile_t *profile)
@@ -273,7 +283,14 @@ dlna_guess_media_profile (dlna_t *dlna, const char *filename)
   dlna_profile_t *profile = NULL;
   dlna_container_type_t st;
   av_codecs_t *codecs;
+  
+  int is_live=0;
 
+  if(startsWith("mmsh://",filename) || startsWith("rtsp://",filename) || startsWith("http://",filename) || startsWith("rtp://",filename)){
+      avformat_network_init();
+      is_live=1;
+  }
+  
   if (!dlna)
     return NULL;
   
@@ -311,18 +328,18 @@ dlna_guess_media_profile (dlna_t *dlna, const char *filename)
   {
     dlna_profile_t *prof;
     
-    if (dlna->check_extensions)
+    if (dlna->check_extensions && !is_live)
     {
       if (p->extensions)
       {
-        /* check for valid file extension */
+        /* check for valid file extension */ //TODO if streaming not search by extension
         if (!match_file_extension (filename, p->extensions))
         {
           p = p->next;
           continue;
         }
       }
-    }
+    } 
     
     prof = p->probe (ctx, st, codecs);
     if (prof)

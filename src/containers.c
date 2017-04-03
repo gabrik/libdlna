@@ -9,6 +9,7 @@
 #include "containers.h"
 #include "profiles.h"
 
+
 #define MPEG_PACK_HEADER 0xba
 #define MPEG_TS_SYNC_CODE 0x47
 #define MPEG_TS_PACKET_LENGTH 188
@@ -38,6 +39,11 @@ mpeg_find_container_type (const char *filename)
   int fd, i;
   ssize_t count;
 
+  if(startsWith("mmsh://",filename) || startsWith("rtsp://",filename) || startsWith("http://",filename) || startsWith("rtp://",filename)){
+      return CT_MPEG_TRANSPORT_STREAM_DLNA_NO_TS;
+  }
+  
+  
   /* read file header */
   fd = open (filename, O_RDONLY);
   count = read (fd, buffer, 2 * MPEG_TS_PACKET_LENGTH_DLNA); // Ignoring count

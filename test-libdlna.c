@@ -2,7 +2,8 @@
 #include <stdio.h>
 
 #include "dlna.h"
-
+// http://127.0.0.1:50040/live
+// /home/gabriele/Video/austr.mp4
 int
 main (int argc, char **argv)
 {
@@ -15,6 +16,8 @@ main (int argc, char **argv)
     printf ("usage: %s media_filename\n", argv[0]);
     return -1;
   }
+  
+  printf("filename:%s\n",argv[1]);
 
   flags = DLNA_ORG_FLAG_STREAMING_TRANSFER_MODE |
     DLNA_ORG_FLAG_BACKGROUND_TRANSFERT_MODE |

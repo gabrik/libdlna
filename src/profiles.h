@@ -24,6 +24,7 @@
 
 #include <libavcodec/avcodec.h>
 #include <libavformat/avformat.h>
+#include <stdbool.h>
 
 #include "dlna_internals.h"
 #include "containers.h"
@@ -148,4 +149,5 @@ int stream_ctx_is_image (AVFormatContext *ctx,
 int stream_ctx_is_audio (av_codecs_t *codecs);
 int stream_ctx_is_av (av_codecs_t *codecs);
 
+bool startsWith(const char *pre, const char *str);
 #endif /* _PROFILES_H_ */

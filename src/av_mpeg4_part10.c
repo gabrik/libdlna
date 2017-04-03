@@ -1248,10 +1248,13 @@ probe_avc (AVFormatContext *ctx,
     return NULL;
 
   /* AAC fixup: _320 profiles are audio-only profiles */
+  
   if (ap == AUDIO_PROFILE_AAC_320)
     ap = AUDIO_PROFILE_AAC;
   if (ap == AUDIO_PROFILE_AAC_HE_L2_320)
     ap =  AUDIO_PROFILE_AAC_HE_L2;
+  
+
   
   /* find profile according to container type, video and audio profiles */
   for (i = 0; avc_profiles_mapping[i].profile; i++)

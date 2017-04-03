@@ -57,6 +57,7 @@
           <cTool>
             <preprocessorList>
               <Elem>HAVE_DEBUG</Elem>
+              <Elem>HAVE_DEVELOPER</Elem>
               <Elem>_FILE_OFFSET_BITS=64</Elem>
               <Elem>_LARGEFILE_SOURCE</Elem>
               <Elem>_REENTRANT</Elem>

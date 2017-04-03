@@ -70,10 +70,14 @@
         <runcommandpicklist>
           <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" /home/gabriele/Video/austr.mp4 </runcommandpicklistitem>
-          <runcommandpicklistitem>"${OUTPUT_PATH}" /home/gabriele/Video/austr.mp4</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" /home/gabriele/Video/sony_eye_candy.mpg</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" mmsh://127.0.0.1:50040</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" rtp://127.0.0.1:50040</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" rtsp://127.0.0.1:50040/live</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" /home/gabriele/Video/austr.mp4</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" http://127.0.0.1:50040/live</runcommandpicklistitem>
         </runcommandpicklist>
-        <runcommand>"${OUTPUT_PATH}" /home/gabriele/Video/sony_eye_candy.mpg</runcommand>
+        <runcommand>"${OUTPUT_PATH}" http://127.0.0.1:50040/live</runcommand>
         <rundir>.</rundir>
         <buildfirst>false</buildfirst>
         <terminal-type>0</terminal-type>
