@@ -27,7 +27,7 @@
 
 #define UPNP_DMS_DESCRIPTION \
 "<?xml version=\"1.0\" encoding=\"utf-8\"?>" \
-"<root xmlns=\"urn:schemas-upnp-org:device-1-0\">" \
+"<root xmlns=\"urn:schemas-upnp-org:device-1-0\" xmlns:dlna=\"urn:schemas-dlna-org:device-1-0\" xmlns:sec=\"http://www.sec.co.kr/dlna\">" \
 "  <specVersion>" \
 "    <major>1</major>" \
 "    <minor>0</minor>" \
